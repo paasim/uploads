@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+if ! getent group | grep -q "^uploads:" ; then
+  echo "Group 'uploads' does not exist, creating"
+  groupadd uploads
+fi

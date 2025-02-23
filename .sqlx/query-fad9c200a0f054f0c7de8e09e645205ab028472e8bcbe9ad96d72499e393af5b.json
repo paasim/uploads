@@ -1,0 +1,38 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT\n                id,\n                name,\n                -- somehow sqlx does not understand the length-function without + 0\n                length(data) + 0 AS data_len,\n                datetime(modified, 'unixepoch') AS modified\n            FROM file",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Integer"
+      },
+      {
+        "name": "name",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "data_len",
+        "ordinal": 2,
+        "type_info": "Integer"
+      },
+      {
+        "name": "modified",
+        "ordinal": 3,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      null,
+      true
+    ]
+  },
+  "hash": "fad9c200a0f054f0c7de8e09e645205ab028472e8bcbe9ad96d72499e393af5b"
+}

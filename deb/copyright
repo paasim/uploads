@@ -1,0 +1,6 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/paasim/uploads
+Upstream-Name: uploads
+Files: *
+Copyright: 2025 Markus Paasiniemi <paasim@iki.fi>
+License: MIT

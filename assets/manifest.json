@@ -1,0 +1,18 @@
+{
+  "name": "Uploader",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#bd92b7",
+  "theme_color": "#bd92b7",
+  "icons": [
+    { "src": "upload.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "upload.png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

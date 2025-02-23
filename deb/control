@@ -1,0 +1,11 @@
+Package: uploads
+Version: x.y.z
+Section: utils
+Priority: optional
+Maintainer: Markus Paasiniemi <paasim@iki.fi>
+Homepage: https://github.com/paasim/uploads
+Architecture: amd64
+Depends: libc6
+Description: upload files
+ Upload, delete or download files. They are stored in an sqlite database
+ and that is all there is to it.

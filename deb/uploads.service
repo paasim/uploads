@@ -1,0 +1,16 @@
+[Unit]
+Description=File uploads and downloads
+
+[Service]
+DynamicUser=yes
+User=_uploads
+Group=uploads
+StateDirectory=uploads
+Restart=on-failure
+EnvironmentFile=/etc/uploads/env
+ReadOnlyPaths=/usr/share/uploads
+WorkingDirectory=/usr/share/uploads
+ExecStart=/usr/bin/uploads
+
+[Install]
+WantedBy=multi-user.target

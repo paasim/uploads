@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Uploader</title>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#bd92b7" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="icon" href="/upload.png" />
+  <link rel="manifest" href="/manifest.json" />
+</head>
+
+<body>
+  <form action="file" method="post" enctype="multipart/form-data">
+    <label class="uploadLabel" style="cursor: pointer">
+      <input name="file" type="file" class="uploadButton" onchange="this.form.submit();" />
+      upload file
+    </label>
+  </form>
+  <section class="files">
+    {% for file in files %}
+    <article class="file" style="display: flex">
+      <div style="display: flex; flex-direction: column;">
+        <a href="file/{{ file.id() }}" download="{{ file.name() }}" style="color: inherit"> {{ file.name() }} </a>
+        <div class="small" style="display: flex">
+          <p>{{ file.modified() }}</p>
+          <p>{{ file.size_formatted() }}</p>
+        </div>
+      </div>
+      <form action="/file/{{ file.id() }}/delete" method="POST">
+        <button style="cursor: pointer">&#10060;</button>
+      </form>
+    </article>
+    {% endfor %}
+  </section>
+</body>
+
+</html>

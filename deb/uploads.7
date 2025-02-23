@@ -1,0 +1,20 @@
+.TH UPLOADS 7
+.SH NAME
+uploads \- file uploads and downloads
+.SH SYNOPSIS
+.B uploads
+.SH DESCRIPTION
+.P
+A simple webapp that allows for file uploads and downloads. It does not offer authentication - all files are accessible by anyone that is able to access the app.
+.SH OPTIONS
+By default, the systemd unit defined in
+.I /lib/systemd/system/uploads.service
+reads the following environment variables from
+.IR /etc/uploads/env :
+
+.IP DATABASE_URL
+path to database file
+.IP MAX_UPLOAD_SIZE_MB
+max file size for uploads
+.IP PORT
+server port

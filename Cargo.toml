@@ -1,0 +1,20 @@
+[package]
+name = "uploads"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+askama = "0.12.1"
+axum = { version = "0.8", features = ["multipart", "macros"] }
+sqlx = { version = "0.8.3", features = ["runtime-tokio", "macros", "migrate", "sqlite"] }
+tokio = { version = "1.43", features = ["macros", "rt-multi-thread"] }
+tower-http = { version = "0.6.2", features = ["fs", "trace"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[dev-dependencies]
+tower = "0.5"
+mime = "0.3"
+
+[profile.dev.package.sqlx-macros]
+opt-level = 3
